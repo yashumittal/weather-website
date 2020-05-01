@@ -54,7 +54,7 @@ app.get('/weather', (req, res) => {
         if (error) { return res.send({ error }) }
         weather.getWeather(longitude, latitude, (error, { weather, temp, feels_like } = {}) => {
             if (error) { return res.send({ error }) }
-            res.send({ place_name, weather, temp, feels_like })
+            res.send({ place_name, weatherReport:'Current weather is: ' + weather + '. Current temp is ' + temp + 'and actual feel is ' + feels_like })
         })
     })
 })
